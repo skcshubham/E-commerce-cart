@@ -4,39 +4,43 @@ import {
 	Button,
 	Card,
 	CardActions,
+	CardContent,
 	CardMedia,
 } from "@material-ui/core";
 import useStyles from "./CartItemStyles";
 
 const CartItem = ({ item }) => {
 	const classes = useStyles();
+
+	// console.log(item.media.source);
+
 	return (
-		<Card>
+		<Card className="cart-item">
 			<CardMedia
-				image={image.media.source}
+				image={item.media.source}
 				alt={item.name}
-				className={classes.name}
+				className={classes.media}
 			/>
 			<CardContent className={classes.cardContent}>
 				<Typography variant="h4">{item.name}</Typography>
 				<Typography variant="h5">
 					{item.line_total.formatted_with_symbol}
 				</Typography>
-				<CardActions className={classes.cardActions}>
-					<div className={classes.buttons}>
-						<button type="button" size="small">
-							-
-						</button>
-						<Typography>{item.quantity}</Typography>
-						<button type="button" size="small">
-							+
-						</button>
-					</div>
-					<Button variant="contained" type="button" colo="secondary">
-						Remove
-					</Button>
-				</CardActions>
 			</CardContent>
+			<CardActions className={classes.cardActions}>
+				<div className={classes.buttons}>
+					<button type="button" size="small">
+						-
+					</button>
+					<Typography>&nbsp;{item.quantity}&nbsp;</Typography>
+					<button type="button" size="small">
+						+
+					</button>
+				</div>
+				<Button variant="contained" type="button" color="secondary">
+					Remove
+				</Button>
+			</CardActions>
 		</Card>
 	);
 };

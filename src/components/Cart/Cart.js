@@ -61,7 +61,7 @@ function Cart({ cart }) {
 			<Typography className={classes.title} variant="h3">
 				Your Shopping Cart
 			</Typography>
-			{cart.line_items.length === 0 ? <EmptyCart /> : <FilledCart />}
+			{cart.line_items.length === 0 ? emptyCart() : filledCart()}
 		</Container>
 	);
 }

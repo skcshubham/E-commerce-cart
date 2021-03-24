@@ -3,7 +3,12 @@ import Products from "./components/Products/Products";
 import Navbar from "./components/Navbar/Navbar";
 import Cart from "./components/Cart/Cart";
 import { commerce } from "./library/commerce";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	BrowserRouter,
+} from "react-router-dom";
 
 function App() {
 	// hooks to store products from commercejs API
@@ -40,11 +45,20 @@ function App() {
 	};
 
 	return (
-		<div className="App">
-			<Navbar totalItems={cart.total_items} />
-			<Products products={products} onAddToCart={handleAddToCart} />
-			<Cart cart={cart} />
-		</div>
+		<BrowserRouter>
+			<div className="App">
+				<Navbar totalItems={cart.total_items} />
+				<Switch>
+					<Route exact path="/">
+						<Products products={products} onAddToCart={handleAddToCart} />
+					</Route>
+
+					<Route exact path="/cart">
+						<Cart cart={cart} />
+					</Route>
+				</Switch>
+			</div>
+		</BrowserRouter>
 	);
 }
 
