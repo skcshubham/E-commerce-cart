@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Products from "./components/Products/Products";
 import Navbar from "./components/Navbar/Navbar";
+import Cart from "./components/Cart/Cart";
 import { commerce } from "./library/commerce";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
 	// hooks to store products from commercejs API
@@ -41,6 +43,7 @@ function App() {
 		<div className="App">
 			<Navbar totalItems={cart.total_items} />
 			<Products products={products} onAddToCart={handleAddToCart} />
+			<Cart cart={cart} />
 		</div>
 	);
 }
