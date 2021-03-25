@@ -13,8 +13,8 @@ function Cart({
 	const classes = useStyles();
 
 	const emptyCart = () => (
-		<Typography variant="subtitle1" gutterBottom>
-			You have no items in your shopping cart, start Shopping =>
+		<Typography variant="subtitle1">
+			You have no items in your cart, start shopping {"=>"}
 			<Link to="/" className={classes.link}>
 				Start adding some items
 			</Link>
@@ -26,7 +26,7 @@ function Cart({
 			<React.Fragment>
 				<Grid container spacing={3}>
 					{cart.line_items.map((item) => (
-						<Grid item xs={12} sm={4} key={item.id}>
+						<Grid item xs={12} sm={6} md={3} key={item.id}>
 							<CartItem
 								item={item}
 								handleUpdateCartQty={handleUpdateCartQty}
@@ -72,7 +72,7 @@ function Cart({
 	return (
 		<Container>
 			<div className={classes.toolbar} gutterBottom />
-			<Typography className={classes.title} variant="h3">
+			<Typography className={classes.title} variant="h3" gutterBottom>
 				Your Shopping Cart
 			</Typography>
 			{cart.line_items.length === 0 ? emptyCart() : filledCart()}

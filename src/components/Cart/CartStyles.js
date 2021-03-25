@@ -6,6 +6,7 @@ export default makeStyles((theme) => ({
 		marginTop: "5%",
 	},
 	emptyButton: {
+		marginBottom: "5px",
 		minWidth: "150px",
 		[theme.breakpoints.down("xs")]: {
 			marginBottom: "5px",
@@ -15,7 +16,8 @@ export default makeStyles((theme) => ({
 		},
 	},
 	checkoutButton: {
-		minWidth: "150px",
+		marginBottom: "5px",
+		minWidth: "100px",
 	},
 	link: {
 		padding: "1%",
@@ -23,7 +25,7 @@ export default makeStyles((theme) => ({
 	},
 	cardDetails: {
 		display: "flex",
-		marginTop: "10%",
+		marginTop: "5%",
 		width: "100%",
 		justifyContent: "space-between",
 	},
