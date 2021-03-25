@@ -3,12 +3,7 @@ import Products from "./components/Products/Products";
 import Navbar from "./components/Navbar/Navbar";
 import Cart from "./components/Cart/Cart";
 import { commerce } from "./library/commerce";
-import {
-	BrowserRouter as Router,
-	Switch,
-	Route,
-	BrowserRouter,
-} from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App() {
 	// hooks to store products from commercejs API
@@ -44,6 +39,24 @@ function App() {
 		setCart(item.cart);
 	};
 
+	// to handle increment and decrement in cart items
+	const handleUpdateCartQty = async (productId, quantity) => {
+		const response = await commerce.cart.update(productId, { quantity });
+		setCart(response.cart);
+	};
+
+	// to handle the remove button from the cart
+	const handleRemoveFromCart = async (productId) => {
+		const response = await commerce.cart.remove(productId);
+		setCart(response.cart);
+	};
+
+	// to handle the empty cart button in cart route
+	const handleEmptyCart = async () => {
+		const response = await commerce.cart.empty();
+		setCart(response.cart);
+	};
+
 	return (
 		<BrowserRouter>
 			<div className="App">
@@ -54,7 +67,12 @@ function App() {
 					</Route>
 
 					<Route exact path="/cart">
-						<Cart cart={cart} />
+						<Cart
+							cart={cart}
+							handleUpdateCartQty={handleUpdateCartQty}
+							handleEmptyCart={handleEmptyCart}
+							handleRemoveFromCart={handleRemoveFromCart}
+						/>
 					</Route>
 				</Switch>
 			</div>

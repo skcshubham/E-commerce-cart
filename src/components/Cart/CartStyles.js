@@ -18,6 +18,7 @@ export default makeStyles((theme) => ({
 		minWidth: "150px",
 	},
 	link: {
+		padding: "1%",
 		textDecoration: "none",
 	},
 	cardDetails: {
