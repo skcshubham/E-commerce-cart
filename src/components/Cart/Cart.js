@@ -53,6 +53,8 @@ function Cart({
 
 						<Button
 							className={classes.checkoutButton}
+							component={Link}
+							to="/checkout"
 							size="large"
 							type="button"
 							variant="contained"
