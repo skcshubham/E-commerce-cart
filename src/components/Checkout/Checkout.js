@@ -8,7 +8,7 @@ const Checkout = () => {
 	return (
 		<React.Fragment>
 			<div className={classes.toolbar} />
-			<h1>Checkout</h1>
+			<h1>Checkout Page</h1>
 		</React.Fragment>
 	);
 };
