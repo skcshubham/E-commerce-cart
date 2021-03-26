@@ -34,7 +34,7 @@ function App() {
 		fetchCart();
 	}, []);
 
-	// event handler to add products to cart on lick of icon
+	// event handler to add products to cart on click of icon
 	const handleAddToCart = async (productId, quantity) => {
 		const item = await commerce.cart.add(productId, quantity);
 		setCart(item.cart);

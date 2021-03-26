@@ -1,14 +1,4 @@
 import React from "react";
-import {
-	Paper,
-	Stepper,
-	Step,
-	StepLabel,
-	Typography,
-	CircularProgress,
-	Divider,
-	Button,
-} from "@material-ui/core";
 import useStyles from "./CheckoutStyles";
 
 const Checkout = () => {
@@ -18,6 +8,7 @@ const Checkout = () => {
 	return (
 		<React.Fragment>
 			<div className={classes.toolbar} />
+			<h1>Checkout</h1>
 		</React.Fragment>
 	);
 };
