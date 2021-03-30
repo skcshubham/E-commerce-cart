@@ -52,7 +52,10 @@ function Cart({
 							Empty Cart
 						</Button>
 
-						<GooglePayButton subtotal={cart.subtotal} />
+						<GooglePayButton
+							emptyProducts={handleEmptyCart}
+							subtotal={cart.subtotal}
+						/>
 					</div>
 				</div>
 			</React.Fragment>

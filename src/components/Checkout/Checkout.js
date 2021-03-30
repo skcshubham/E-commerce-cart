@@ -1,12 +1,16 @@
 import React from "react";
 import GooglePayButton from "@google-pay/button-react";
 
-const Checkout = ({ subtotal }) => {
+const Checkout = ({ subtotal, emptyProducts }) => {
 	// console.log(subtotal.raw);
 	const price = "" + subtotal.raw;
 	return (
-		<React.Fragment>
+		<button
+			onClick={emptyProducts}
+			style={{ border: "none", backgroundColor: "white" }}
+		>
 			<GooglePayButton
+				onClick={emptyProducts}
 				environment="TEST"
 				paymentRequest={{
 					apiVersion: 2,
@@ -56,7 +60,7 @@ const Checkout = ({ subtotal }) => {
 				buttonColor="black"
 				buttonType="Buy"
 			/>
-		</React.Fragment>
+		</button>
 	);
 };
 
