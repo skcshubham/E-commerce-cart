@@ -37,7 +37,7 @@ const Navbar = ({ totalItems }) => {
 					</Typography>
 					<div className="classes.grow" />
 					{/* if we're at cart path, we wont display cart icon */}
-					{location.pathname === "/" ? (
+					{location.pathname === "/" && (
 						<div className={classes.button}>
 							<IconButton
 								component={Link}
@@ -50,7 +50,7 @@ const Navbar = ({ totalItems }) => {
 								</Badge>
 							</IconButton>
 						</div>
-					) : null}
+					)}
 				</Toolbar>
 			</AppBar>
 		</div>

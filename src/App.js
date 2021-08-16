@@ -14,7 +14,7 @@ function App() {
 
 	// function to fetch products from commercejs
 	const fetchProducts = async () => {
-		// fetch products and destucture it on app load, it return promise
+		// fetch products and destucture it on app load, it returns promise
 		const { data } = await commerce.products.list();
 		// setting state as fetched products
 		setProducts(data);
